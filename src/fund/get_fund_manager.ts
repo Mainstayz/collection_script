@@ -3,17 +3,9 @@ import axios from 'axios'
 import * as csv from 'csv'
 import { writeFileSync } from 'fs'
 import { join } from 'path'
+import { ManagerData } from './models'
 
 async function main() {
-    type ManagerData = {
-        uid: string
-        name: string
-        fundCodes: string[]
-        workDay: number
-        return: number
-        optimal: string
-        optimalName: string
-    }
     const result: ManagerData[] = []
 
     // http://fund.eastmoney.com/Data/FundDataPortfolio_Interface.aspx?dt=14&mc=returnjson&ft=all&pn=50&pi=1&sc=abbname&st=asc
